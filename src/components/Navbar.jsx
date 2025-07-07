@@ -13,7 +13,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const triggerHeight = window.innerHeight * 0.4;
+      const triggerHeight = window.innerHeight * 0.2;
       setIsSticky(window.scrollY > triggerHeight);
     };
 

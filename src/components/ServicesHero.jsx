@@ -7,7 +7,7 @@ export default function ServicesHero() {
     <section className="relative pt-20 w-full min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 lg:px-20 py-12 bg-gradient-to-r from-blue-500 to-purple-700">
       {/* Left Content */}
 <div className="w-full lg:w-1/2 text-white">
-  <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+  <h1 className="text-3xl lg:text-6xl font-bold leading-tight">
     Industrial Fabrication & Infrastructure Experts
   </h1>
   <p className="mt-4 text-lg lg:text-xl opacity-90">

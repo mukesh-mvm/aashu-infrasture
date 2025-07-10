@@ -26,19 +26,29 @@ const Navbar = () => {
   const underlineClass =
     "absolute bottom-0 left-0 h-[2px] w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full";
 
+  const services = [
+    "FABRICATION",
+    "INDUSTRIAL",
+    "CEMENT PLANT",
+    "POWER PLANT",
+    "HEAVY BOILER",
+    "FOB BRIDGE",
+    "RAILWAY BRIDGE",
+  ];
+
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-999 pb-4 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isSticky ? "bg-gray-900 shadow-md" : "bg-transparent"
       } text-white`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <div className="text-xl font-bold tracking-wide">
-          <span className="text-yellow-400">AASHU  </span>INFRASTRUCTURE
+          <span className="text-yellow-400">AASHU </span>INFRASTRUCTURE
         </div>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 text-base font-medium items-center">
           {/* Home */}
           <a href="#" className={`group ${navLinkClass}`}>
@@ -46,12 +56,8 @@ const Navbar = () => {
             <span className={underlineClass}></span>
           </a>
 
-          {/* Services with hover and click */}
-          <div
-            className="relative group"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
+          {/* Services - Click Only */}
+          <div className="relative">
             <button
               className={`group flex items-center gap-1 ${navLinkClass}`}
               onClick={() => setServicesOpen((prev) => !prev)}
@@ -62,11 +68,11 @@ const Navbar = () => {
             </button>
 
             <div
-              className={`absolute top-full mt-2 left-0 w-44 bg-black border border-white/10 shadow-lg transition-all ${
+              className={`absolute top-full mt-2 left-0 w-56 bg-black border border-white/10 shadow-lg transition-all ${
                 servicesOpen ? "block" : "hidden"
               }`}
             >
-              {["Home Wiring", "Lighting", "Theater Setup"].map((item, idx) => (
+              {services.map((item, idx) => (
                 <a
                   key={idx}
                   href="#"
@@ -91,7 +97,7 @@ const Navbar = () => {
           </a>
         </nav>
 
-        {/* Hamburger Button */}
+        {/* Hamburger Button (Mobile) */}
         <button onClick={toggleMenu} className="md:hidden text-white z-40">
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -117,7 +123,7 @@ const Navbar = () => {
             </button>
             {servicesOpen && (
               <div className="ml-4 mt-2 space-y-2 text-sm text-gray-300">
-                {["Home Wiring", "Lighting", "Theater Setup"].map((item, idx) => (
+                {services.map((item, idx) => (
                   <a
                     key={idx}
                     href="#"

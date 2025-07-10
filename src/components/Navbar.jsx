@@ -28,7 +28,6 @@ const Navbar = () => {
 
   const services = [
     "FABRICATION",
-    "INDUSTRIAL",
     "CEMENT PLANT",
     "POWER PLANT",
     "HEAVY BOILER",

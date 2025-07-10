@@ -11,12 +11,16 @@ import ImageCrosel from '../components/ImageCrosel'
 import ServicesHero from '../components/ServicesHero'
 import Navbar from '../components/Navbar'
 import ImageGallery from '../components/ImageGallery'
+import DirectorMessage from '../components/DirectorMessage '
+import MissionVision from '../components/MissionVision '
  const Home = () => {
   return (
     <div>
           
           <Navbar/>
         <ServicesHero/>
+        <DirectorMessage/>
+        <MissionVision/>
        <Services/>
         <Specilist/>
         <Gettouch/>

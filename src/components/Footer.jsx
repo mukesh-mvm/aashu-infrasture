@@ -1,6 +1,8 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import { IoIosMail, IoIosCall, IoIosPin } from "react-icons/io";
 
+
+
 const Footer = () => {
   return (
 
@@ -9,7 +11,7 @@ const Footer = () => {
       <div className=" mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo & Mailing List */}
         <div className=" flex flex-col gap-4">
-          <h2 className="text-2xl font-bold mb-4">ConCho</h2>
+          <h2 className="text-2xl font-bold mb-4">AASHU INFRASTRUCTURE</h2>
           <p className="mb-4">
             Nunc imperdiet odio et urna dignissim, sitamet sagittis exque.
           </p>
@@ -53,7 +55,7 @@ const Footer = () => {
         </div>
 
         {/* Navigation */}
-        <div>
+        {/* <div>
           <h3 className="font-semibold mb-4">| Navigation</h3>
           <ul className=" flex flex-col gap-8">
             <li>Company</li>
@@ -62,36 +64,36 @@ const Footer = () => {
             <li>Our Blog</li>
             <li>Privacy Policy</li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Contact Info */}
-        <div>
-          <h3 className="font-semibold mb-4">| Contact Info</h3>
-          <p className="flex items-center gap-2">
-            <IoIosPin /> 58 A, East Madison Street, Baltimore, MD, USA 4508
-          </p>
-          <p className="flex items-center gap-2 mt-4">
-            <IoIosCall /> 000 - 123 - 456789
-          </p>
-          <p className="flex items-center gap-2 mt-4">
-            <IoIosMail /> info@example.com
-          </p>
-          <h3 className="font-semibold mt-6">| Follow Us</h3>
-          <div className="flex gap-2 mt-2">
-            <button className="bg-gray-500 p-2 rounded-lg">
-              <FaFacebookF />
-            </button>
-            <button className="bg-gray-500 p-2 rounded-lg">
-              <FaInstagram />
-            </button>
-            <button className="bg-gray-500 p-2 rounded-lg">
-              <FaTwitter />
-            </button>
-            <button className="bg-gray-500 p-2 rounded-lg">
-              <FaYoutube />
-            </button>
-          </div>
-        </div>
+<div>
+  <h3 className="font-semibold mb-4">| Contact Info</h3>
+  <p className="flex items-center gap-2">
+    <IoIosPin /> B84, Gangua Bazar, Laxmi Pur Babu, Kushinagar, Uttar Pradesh – 274407
+  </p>
+  <p className="flex items-center gap-2 mt-4">
+    <IoIosCall /> 7309897358
+  </p>
+  <p className="flex items-center gap-2 mt-4">
+    <IoIosMail /> ravindersingh989735@gmail.com
+  </p>
+  <h3 className="font-semibold mt-6">| Follow Us</h3>
+  <div className="flex gap-2 mt-2">
+    <button className="bg-gray-500 p-2 rounded-lg text-white">
+      <FaFacebookF />
+    </button>
+    <button className="bg-gray-500 p-2 rounded-lg text-white">
+      <FaInstagram />
+    </button>
+    <button className="bg-gray-500 p-2 rounded-lg text-white">
+      <FaTwitter />
+    </button>
+    <button className="bg-gray-500 p-2 rounded-lg text-white">
+      <FaYoutube />
+    </button>
+  </div>
+</div>
       </div>
 
       {/* Bottom Section */}

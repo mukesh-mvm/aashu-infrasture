@@ -1,90 +1,56 @@
-
 import { useState } from "react";
+import {
+  FaTools,            // Custom Fabrication
+  FaHardHat,          // On-Site Execution
+  FaProjectDiagram,   // Turnkey Project Delivery
+  FaShieldAlt         // Quality & Safety
+} from "react-icons/fa";
 
-
-// SVG Icons
+// Icon mapping
 const icons = {
-  heart: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-10 h-10"
-    >
-      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-    </svg>
-  ),
-  location: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-10 h-10"
-    >
-      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
-    </svg>
-  ),
-  diamond: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-10 h-10"
-    >
-      <path d="M6 2L2 8l10 12L22 8l-4-6H6zm4.12 2h3.76L18.8 8h-13L10.12 4zM4 9l7 9.09L4 9zm8 10.9L5 9h14l-7 10.9zm1-1.8L20 9l-7 9.1z" />
-    </svg>
-  ),
-  settings: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-10 h-10"
-    >
-      <path d="M19.43 12.98l1.6-2.77-2.09-3.63-3.77.66a5.97 5.97 0 00-1.42-.82l-.57-3.72H9.28l-.57 3.72c-.5.2-.98.47-1.42.82l-3.77-.66-2.09 3.63 1.6 2.77a6.068 6.068 0 000 2.04l-1.6 2.77 2.09 3.63 3.77-.66c.44.35.92.62 1.42.82l.57 3.72h3.14l.57-3.72c.5-.2.98-.47 1.42-.82l3.77.66 2.09-3.63-1.6-2.77c.11-.66.11-1.38 0-2.04zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 8.5 12 8.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
-    </svg>
-  ),
+  fabrication: <FaTools className="w-10 h-10" />,
+  execution: <FaHardHat className="w-10 h-10" />,
+  turnkey: <FaProjectDiagram className="w-10 h-10" />,
+  quality: <FaShieldAlt className="w-10 h-10" />,
 };
 
-// Card Data
+// Card data
 const cards = [
   {
     id: 0,
     title: "Custom Fabrication",
     description:
       "Specialized MS and structural steel fabrication for cement plants, power plants, and industrial infrastructure with precise engineering standards.",
-    icon: icons.heart,
+    icon: icons.fabrication,
   },
   {
     id: 1,
     title: "On-Site Execution",
     description:
       "With deep local expertise, we execute infrastructure projects like FOBs, railway bridges, and plant installations across India.",
-    icon: icons.location,
+    icon: icons.execution,
   },
   {
     id: 2,
     title: "Turnkey Project Delivery",
     description:
       "From design to commissioning, we manage the complete lifecycle of heavy industrial and infrastructure projects seamlessly.",
-    icon: icons.diamond,
+    icon: icons.turnkey,
   },
   {
     id: 3,
     title: "Quality & Safety",
     description:
       "We adhere to the highest safety and quality standards to ensure long-lasting and dependable infrastructure solutions.",
-    icon: icons.settings,
+    icon: icons.quality,
   },
 ];
-
 
 const ServicesSection = () => {
   const [activeIndex, setActiveIndex] = useState(0); // First card is active by default
 
   return (
     <div className="container mx-auto items-center pt-24 pb-10">
-
       <div className="flex flex-wrap justify-center gap-6 p-6">
         {cards.map((card, index) => (
           <div
@@ -94,7 +60,7 @@ const ServicesSection = () => {
             onMouseEnter={() => setActiveIndex(index)}
             onMouseLeave={() => setActiveIndex(0)} // Reset to first card when hover ends
           >
-            {/* Background Gradient Animation */}
+            {/* Animated Background Gradient */}
             <div
               className={`absolute inset-0 bg-gradient-to-t from-pink-500 to-indigo-600 transition-all duration-500
             ${
@@ -103,7 +69,7 @@ const ServicesSection = () => {
             `}
             ></div>
 
-            {/* Content */}
+            {/* Card Content */}
             <div className="relative z-10 flex flex-col items-center justify-center text-center h-full transition-all duration-500">
               <div
                 className={`transition-all duration-500 ${

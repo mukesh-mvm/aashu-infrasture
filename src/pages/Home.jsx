@@ -13,6 +13,8 @@ import Navbar from '../components/Navbar'
 import ImageGallery from '../components/ImageGallery'
 import DirectorMessage from '../components/DirectorMessage '
 import MissionVision from '../components/MissionVision '
+import Ceo from '../components/Ceo'
+import TestimonialSlider from '../components/TestimonialSlider'
  const Home = () => {
   return (
     <div>
@@ -20,6 +22,8 @@ import MissionVision from '../components/MissionVision '
           <Navbar/>
         <ServicesHero/>
         <DirectorMessage/>
+        <Ceo/>
+        <TestimonialSlider/>
         <MissionVision/>
        <Services/>
         <Specilist/>
@@ -27,8 +31,8 @@ import MissionVision from '../components/MissionVision '
         <ServicesSection/>
         <ImageGallery/>
          <Hero/>
-        <HeroSection/>
-        <TestimonialCarousel/>
+        {/* <HeroSection/> */}
+        {/* <TestimonialCarousel/> */}
         <Footer/>
     </div>
   )

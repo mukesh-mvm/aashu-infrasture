@@ -11,21 +11,6 @@ const Navbar = () => {
     setServicesOpen(false);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const triggerHeight = window.innerHeight * 0.2;
-      setIsSticky(window.scrollY > triggerHeight);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navLinkClass =
-    "relative px-1 py-1 transition text-white hover:text-yellow-400";
-  const underlineClass =
-    "absolute bottom-0 left-0 h-[2px] w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full";
-
   const services = [
     "FABRICATION",
     "CEMENT PLANT",
@@ -34,6 +19,41 @@ const Navbar = () => {
     "FOB BRIDGE",
     "RAILWAY BRIDGE",
   ];
+
+  // Sticky Navbar on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerHeight = window.innerHeight * 0.2;
+      setIsSticky(window.scrollY > triggerHeight);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Google Translate script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.async = true;
+    document.body.appendChild(script);
+
+    window.googleTranslateElementInit = () => {
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: "en,hi",
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        "google_translate_element"
+      );
+    };
+  }, []);
+
+  const navLinkClass =
+    "relative px-1 py-1 transition text-white hover:text-yellow-400";
+  const underlineClass =
+    "absolute bottom-0 left-0 h-[2px] w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full";
 
   return (
     <header
@@ -49,13 +69,12 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 text-base font-medium items-center">
-          {/* Home */}
           <a href="#" className={`group ${navLinkClass}`}>
             Home
             <span className={underlineClass}></span>
           </a>
 
-          {/* Services - Click Only */}
+          {/* Services - Click to Open */}
           <div className="relative">
             <button
               className={`group flex items-center gap-1 ${navLinkClass}`}
@@ -83,20 +102,24 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* About Us */}
           <a href="#" className={`group ${navLinkClass}`}>
             About Us
             <span className={underlineClass}></span>
           </a>
 
-          {/* Contact Us */}
           <a href="#" className={`group ${navLinkClass}`}>
             Contact Us
             <span className={underlineClass}></span>
           </a>
+
+          {/* Google Translate Switcher */}
+          {/* <div
+            id="google_translate_element"
+            className="ml-4 bg-white text-black px-2 py-1 rounded text-sm"
+          /> */}
         </nav>
 
-        {/* Hamburger Button (Mobile) */}
+        {/* Hamburger Button */}
         <button onClick={toggleMenu} className="md:hidden text-white z-40">
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -105,13 +128,12 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-black/90 backdrop-blur-sm z-20 px-6 py-4 space-y-4">
-          {/* Home */}
           <a href="#" className="block text-white text-lg hover:text-yellow-400 relative group">
             Home
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full" />
           </a>
 
-          {/* Services Mobile Dropdown */}
+          {/* Mobile Services */}
           <div>
             <button
               onClick={() => setServicesOpen(!servicesOpen)}
@@ -135,17 +157,21 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* About Us */}
           <a href="#" className="block text-white text-lg hover:text-yellow-400 relative group">
             About Us
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full" />
           </a>
 
-          {/* Contact Us */}
           <a href="#" className="block text-white text-lg hover:text-yellow-400 relative group">
             Contact Us
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full" />
           </a>
+
+          {/* Google Translate in Mobile */}
+          <div
+            id="google_translate_element_mobile"
+            className="pt-4 text-white"
+          />
         </div>
       )}
     </header>

@@ -3,6 +3,9 @@ import { Star } from 'lucide-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+
+
+
 const testimonials = [
   {
     image: '/images/t1.png',
@@ -15,7 +18,7 @@ const testimonials = [
     location: 'Beawar, Rajasthan',
   },
   {
-    image: '/images/t3.png',
+    image: '/images/tt2.png',
     name: 'JP Cement Plant',
     location: 'Rewa, Madhya Pradesh',
   },
@@ -30,42 +33,42 @@ const testimonials = [
     location: 'Morak, Kota, Rajasthan',
   },
   {
-    image: '/images/t6.png',
+    image: '/images/tt3.png',
     name: 'Binani Cement',
     location: 'Sirohi, Rajasthan',
   },
   {
-    image: '/images/t1.png',
+    image: '/images/tt4.png',
     name: 'ACC Cement',
     location: 'Himachal Pradesh',
   },
   {
-    image: '/images/t1.png',
+    image: '/images/tt5.png',
     name: 'Ranbaxy',
     location: 'Mohali, Chandigarh',
   },
   {
-    image: '/images/t1.png',
+    image: '/images/tt6.png',
     name: 'Ranbaxy',
     location: 'Tonsa, Ropar, Punjab',
   },
   {
-    image: '/images/t4.png',
+    image: '/images/tt7.png',
     name: 'Gudiyar',
     location: 'Faridabad',
   },
   {
-    image: '/images/t1.png',
+    image: '/images/tt8.png',
     name: 'Apollo Tyres',
     location: 'Bagodara, Vadodara, Gujarat',
   },
   {
-    image: '/images/t1.png',
+    image: '/images/tt9.png',
     name: 'CEAT Tyres',
     location: 'Butibori, Nagpur',
   },
   {
-    image: '/images/t3.png',
+    image: '/images/tt10.png',
     name: 'Jubilant Life & Sciences',
     location: 'Bharuch, Gujarat',
   },

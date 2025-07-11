@@ -57,7 +57,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-100000 transition-all duration-300 ${
         isSticky ? "bg-gray-900 shadow-md" : "bg-transparent"
       } text-white`}
     >
@@ -127,7 +127,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-black/90 backdrop-blur-sm z-20 px-6 py-4 space-y-4">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-black/90 backdrop-blur-sm z-1000000 px-6 py-4 space-y-4">
           <a href="#" className="block text-white text-lg hover:text-yellow-400 relative group">
             Home
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full" />
